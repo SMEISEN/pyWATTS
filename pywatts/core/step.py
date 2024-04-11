@@ -284,8 +284,8 @@ class Step(BaseStep):
             recalculated_targets = [input_step.recalculated for input_step in self.input_steps.values()
                                     if hasattr(input_step, 'recalculated')]
             recalculated = recalculated_inputs + recalculated_targets
-            if any(recalculated):
-                self._recalculate(end)
+            # if any(recalculated):
+            #     self._recalculate(end)
 
     def _refit(self, end, refit_batch, refit_params=None):
         if isinstance(refit_batch, pd.Timedelta):
