@@ -1,5 +1,6 @@
 from typing import Dict
 
+import numpy as np
 import xarray as xr
 
 from pywatts.core.base import BaseTransformer
@@ -45,7 +46,7 @@ class ChangeDirection(BaseTransformer):
         """
         indexes = _get_time_indexes(x)
         try:
-            return xr.ufuncs.sign(x - x.shift({index: 1 for index in indexes}))
+            return np.sign(x - x.shift({index: 1 for index in indexes}))
         except ValueError as exc:
             raise WrongParameterException(
                 f"Not all indexes ({indexes}) are in the indexes of x ({list(x.indexes.keys())}).",

@@ -5,15 +5,18 @@ setuptools.setup(
     version="0.3.0",
     packages=setuptools.find_packages(),
 
-    install_requires=['scikit-learn >= 1.0', 'cloudpickle', 'holidays', 'xarray>=0.19', 'numpy', 'pandas', 'matplotlib',
-                      'workalendar',  'statsmodels', 'tabulate', 'river', 'tensorflow'],
+    install_requires=['cloudpickle', 'holidays', 'xarray>=0.19', 'numpy', 'pandas', 'matplotlib', 'workalendar', 'tabulate'],
     extras_require={
         'dev': [
             "pytest",
             "sphinx>=4",
             "pylint",
             "pytest-cov"
-        ]
+        ],
+        'sm': ['statsmodels'],
+        'ml': ['scikit-learn >= 1.0'],
+        'dl': ['tensorflow', 'torch'],
+        'online': ['river']
     },
     author="pyWATTS-TEAM",
     author_email="pywatts-team@iai.kit.edu",
