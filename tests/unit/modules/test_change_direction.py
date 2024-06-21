@@ -1,9 +1,10 @@
 import unittest
 
-from pywatts.modules import ChangeDirection
 import pandas as pd
 import xarray as xr
 import numpy as np
+
+from pywatts.modules.preprocessing.change_direction import ChangeDirection
 
 
 class TestChangeDirection(unittest.TestCase):

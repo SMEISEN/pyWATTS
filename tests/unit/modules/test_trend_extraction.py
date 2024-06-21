@@ -3,7 +3,7 @@ import unittest
 import pandas as pd
 import xarray as xr
 
-from pywatts.modules import TrendExtraction
+from pywatts.modules.feature_extraction.trend_extraction import TrendExtraction
 
 
 class TestTrendExtraction(unittest.TestCase):

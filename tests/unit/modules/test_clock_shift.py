@@ -4,7 +4,7 @@ import numpy as np
 import xarray as xr
 
 from pywatts.core.exceptions.wrong_parameter_exception import WrongParameterException
-from pywatts.modules import ClockShift
+from pywatts.modules.preprocessing.clock_shift import ClockShift
 
 
 class TestClockShift(unittest.TestCase):

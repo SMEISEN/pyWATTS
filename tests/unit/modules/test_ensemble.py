@@ -3,7 +3,7 @@ import pandas as pd
 import xarray as xr
 
 from pywatts.core.exceptions.wrong_parameter_exception import WrongParameterException
-from pywatts.modules import Ensemble
+from pywatts.modules.postprocessing.ensemble import Ensemble
 
 
 class TestEnsemble(unittest.TestCase):

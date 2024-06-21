@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 
-from pywatts.callbacks import BaseCallback
+from pywatts.callbacks.base_callback import BaseCallback
 from pywatts.core.base import Base, BaseEstimator
 from pywatts.core.base_condition import BaseCondition
 from pywatts.core.base_step import BaseStep

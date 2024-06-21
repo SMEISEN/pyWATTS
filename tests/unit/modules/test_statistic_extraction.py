@@ -1,11 +1,13 @@
 import unittest
 
-import numpy as np
 import pandas as pd
 import xarray as xr
-from pywatts.modules import StatisticExtraction, StatisticFeature
 
 from unittest.mock import MagicMock
+
+from pywatts.modules.feature_extraction.statistics_extraction import StatisticFeature, StatisticExtraction
+
+
 class TestStatisticExtraction(unittest.TestCase):
 
     def test_get_set_params(self):

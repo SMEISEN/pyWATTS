@@ -8,7 +8,7 @@ import pandas as pd
 import xarray as xr
 
 from pywatts.modules.models.profile_neural_network import ProfileNeuralNetwork, _sum_squared_error, _root_mean_squared_error
-from pywatts.modules import KerasWrapper
+from pywatts.modules.wrappers.keras_wrapper import KerasWrapper
 
 
 class TestPNN(unittest.TestCase):

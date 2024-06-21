@@ -3,11 +3,14 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import xarray as xr
 
-from pywatts.callbacks import CSVCallback, LinePlotCallback
+from pywatts.callbacks.csv_callback import CSVCallback
+from pywatts.callbacks.plot_callback import LinePlotCallback
 # From pyWATTS the pipeline is imported
 from pywatts.core.pipeline import Pipeline
+from pywatts.modules.wrappers.function_module import FunctionModule
+
+
 # All modules required for the pipeline are imported
-from pywatts.modules import FunctionModule
 
 
 def custom_multiplication(x: xr.Dataset):

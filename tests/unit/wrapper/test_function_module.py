@@ -2,7 +2,7 @@ import os
 import unittest
 from unittest.mock import MagicMock, patch
 
-from pywatts.modules import FunctionModule
+from pywatts.modules.wrappers.function_module import FunctionModule
 
 
 class TestFunctionModule(unittest.TestCase):

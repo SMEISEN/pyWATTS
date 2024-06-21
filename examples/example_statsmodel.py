@@ -8,13 +8,18 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from statsmodels.tsa.arima_model import ARIMA
 
-from pywatts.callbacks import CSVCallback, LinePlotCallback
+from pywatts.callbacks.csv_callback import CSVCallback
+from pywatts.callbacks.plot_callback import LinePlotCallback
 from pywatts.core.computation_mode import ComputationMode
 from pywatts.core.pipeline import Pipeline
+from pywatts.modules.feature_extraction.calendar_extraction import CalendarExtraction, CalendarFeature
+from pywatts.modules.preprocessing.clock_shift import ClockShift
+from pywatts.modules.preprocessing.linear_interpolation import LinearInterpolater
+from pywatts.modules.wrappers.sklearn_wrapper import SKLearnWrapper
+from pywatts.modules.wrappers.sm_time_series_model_wrapper import SmTimeSeriesModelWrapper
+from pywatts.summaries.rmse_summary import RMSE
 
 # All modules required for the pipeline are imported
-from pywatts.modules import CalendarExtraction, CalendarFeature, ClockShift, LinearInterpolater, RmseCalculator, \
-    SKLearnWrapper, SmTimeSeriesModelWrapper
 
 if __name__ == "__main__":
     # Create a pipeline
@@ -60,8 +65,7 @@ if __name__ == "__main__":
     )
 
     # Calculate the root mean squared error (RMSE) between the linear regression and the true values, save it as csv file
-    rmse = RmseCalculator()(y_hat=inverse_power_scale, y=pipeline["load_power_statistics"],
-                            callbacks=[CSVCallback('RMSE')])
+    rmse = RMSE()(y_hat=inverse_power_scale, y=pipeline["load_power_statistics"])
 
     # Now, the pipeline is complete so we can run it and explore the results
     # Start the pipeline

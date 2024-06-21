@@ -8,13 +8,15 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVR
 
-
-
+from pywatts.callbacks.csv_callback import CSVCallback
+from pywatts.callbacks.plot_callback import LinePlotCallback
 # Import the pyWATTS pipeline and the required modules
 from pywatts.core.computation_mode import ComputationMode
 from pywatts.core.pipeline import Pipeline
-from pywatts.callbacks import CSVCallback, LinePlotCallback
-from pywatts.modules import ClockShift, LinearInterpolater, RollingRMSE, SKLearnWrapper
+from pywatts.modules.metrics.rolling_rmse import RollingRMSE
+from pywatts.modules.preprocessing.clock_shift import ClockShift
+from pywatts.modules.preprocessing.linear_interpolation import LinearInterpolater
+from pywatts.modules.wrappers.sklearn_wrapper import SKLearnWrapper
 
 
 # The condition function. It returns True during daytime.

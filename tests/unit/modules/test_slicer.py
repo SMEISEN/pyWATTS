@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 
-from pywatts.modules import Slicer
+from pywatts.modules.preprocessing.slicer import Slicer
 
 
 class TestSlicer(unittest.TestCase):

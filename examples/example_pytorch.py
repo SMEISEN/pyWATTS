@@ -7,13 +7,16 @@ import pandas as pd
 import torch
 from sklearn.preprocessing import StandardScaler
 
+from pywatts.callbacks.plot_callback import LinePlotCallback
 # Import the pyWATTS pipeline and the required modules
 
-from pywatts.callbacks import LinePlotCallback
 from pywatts.core.computation_mode import ComputationMode
 from pywatts.core.pipeline import Pipeline
-from pywatts.modules import ClockShift, LinearInterpolater, SKLearnWrapper, PyTorchWrapper
-from pywatts.summaries import RMSE
+from pywatts.modules.preprocessing.clock_shift import ClockShift
+from pywatts.modules.preprocessing.linear_interpolation import LinearInterpolater
+from pywatts.modules.wrappers.pytorch_wrapper import PyTorchWrapper
+from pywatts.modules.wrappers.sklearn_wrapper import SKLearnWrapper
+from pywatts.summaries.rmse_summary import RMSE
 
 
 def get_sequential_model():

@@ -9,16 +9,19 @@ from sklearn.preprocessing import StandardScaler
 
 from tensorflow.keras import layers, Model
 
-from pywatts.callbacks import LinePlotCallback
-
+from pywatts.callbacks.plot_callback import LinePlotCallback
 # From pyWATTS the pipeline is imported
 from pywatts.core.computation_mode import ComputationMode
 from pywatts.core.pipeline import Pipeline
 
 # Import the pyWATTS pipeline and the required modules
-from pywatts.modules import ClockShift, LinearInterpolater, SKLearnWrapper, KerasWrapper
-from pywatts.summaries import RMSE
 from tensorflow.keras import backend as K
+from pywatts.modules.preprocessing.clock_shift import ClockShift
+from pywatts.modules.preprocessing.linear_interpolation import LinearInterpolater
+from pywatts.modules.wrappers.keras_wrapper import KerasWrapper
+from pywatts.modules.wrappers.sklearn_wrapper import SKLearnWrapper
+from pywatts.summaries.rmse_summary import RMSE
+
 
 def get_keras_model():
     # write the model with the Functional API, Sequential does not support multiple input tensors

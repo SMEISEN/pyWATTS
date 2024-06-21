@@ -4,7 +4,7 @@ import pandas as pd
 import torch
 import xarray as xr
 
-from pywatts.modules import PyTorchWrapper
+from pywatts.modules.wrappers.pytorch_wrapper import PyTorchWrapper
 
 
 class TestPyTorchWrapper(unittest.TestCase):

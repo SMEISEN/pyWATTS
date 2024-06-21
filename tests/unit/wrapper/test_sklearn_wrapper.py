@@ -12,7 +12,7 @@ from sklearn.feature_selection import SelectKBest, f_regression
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC, SVR
 
-from pywatts.modules import SKLearnWrapper
+from pywatts.modules.wrappers.sklearn_wrapper import SKLearnWrapper
 
 
 class TestSklearnWrapper(unittest.TestCase):

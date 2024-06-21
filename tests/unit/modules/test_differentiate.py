@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 
-from pywatts.modules import Differentiate
 from pywatts.core.exceptions.wrong_parameter_exception import WrongParameterException
+from pywatts.modules.preprocessing.differentiate import Differentiate
 
 
 class TestResampler(unittest.TestCase):

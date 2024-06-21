@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 
-from pywatts.modules import KerasWrapper
+from pywatts.modules.wrappers.keras_wrapper import KerasWrapper
 
 stored_model = {
     "aux_models": [

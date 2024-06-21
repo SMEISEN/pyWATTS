@@ -12,8 +12,9 @@ from pywatts.core.pipeline import Pipeline
 from pywatts.core.start_step import StartStep
 from pywatts.core.step import Step
 from pywatts.core.run_setting import RunSetting
-from pywatts.modules import MissingValueDetector, SKLearnWrapper
-from pywatts.summaries import RMSE
+from pywatts.modules.preprocessing.missing_value_detection import MissingValueDetector
+from pywatts.modules.wrappers.sklearn_wrapper import SKLearnWrapper
+from pywatts.summaries.rmse_summary import RMSE
 
 pipeline_json = {'id': 1,
                  'name': 'Pipeline',

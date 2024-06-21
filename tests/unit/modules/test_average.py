@@ -3,7 +3,7 @@ import unittest
 import pandas as pd
 import xarray as xr
 
-from pywatts.modules import Average
+from pywatts.modules.preprocessing.average import Average
 
 
 class TestAverage(unittest.TestCase):

@@ -10,12 +10,16 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.feature_selection import SelectKBest, f_regression
 
 # From pyWATTS the pipeline is imported
-from pywatts.callbacks import LinePlotCallback
+from pywatts.callbacks.plot_callback import LinePlotCallback
 from pywatts.core.computation_mode import ComputationMode
 from pywatts.core.pipeline import Pipeline
 # All modules required for the pipeline are imported
-from pywatts.modules import CalendarExtraction, CalendarFeature, ClockShift, LinearInterpolater, SKLearnWrapper, Sampler
-from pywatts.summaries import RMSE
+from pywatts.modules.feature_extraction.calendar_extraction import CalendarExtraction, CalendarFeature
+from pywatts.modules.preprocessing.clock_shift import ClockShift
+from pywatts.modules.preprocessing.linear_interpolation import LinearInterpolater
+from pywatts.modules.preprocessing.sampler import Sampler
+from pywatts.modules.wrappers.sklearn_wrapper import SKLearnWrapper
+from pywatts.summaries.rmse_summary import RMSE
 
 # The main function is where the pipeline is created and run
 if __name__ == "__main__":

@@ -9,14 +9,19 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVR
 
+from pywatts.callbacks.csv_callback import CSVCallback
+from pywatts.callbacks.plot_callback import LinePlotCallback
 # Import the pyWATTS pipeline and the required modules
-from pywatts.callbacks import CSVCallback, LinePlotCallback
 from pywatts.conditions.cd_condition import RiverDriftDetectionCondition
 from pywatts.conditions.periodic_condition import PeriodicCondition
 from pywatts.core.computation_mode import ComputationMode
 from pywatts.core.pipeline import Pipeline
-from pywatts.modules import ClockShift, LinearInterpolater, RollingRMSE, SKLearnWrapper, Sampler, FunctionModule
-
+from pywatts.modules.metrics.rolling_rmse import RollingRMSE
+from pywatts.modules.preprocessing.clock_shift import ClockShift
+from pywatts.modules.preprocessing.linear_interpolation import LinearInterpolater
+from pywatts.modules.preprocessing.sampler import Sampler
+from pywatts.modules.wrappers.function_module import FunctionModule
+from pywatts.modules.wrappers.sklearn_wrapper import SKLearnWrapper
 
 # This function creates and returns the preprocessing pipeline
 from pywatts.utils._xarray_time_series_utils import numpy_to_xarray

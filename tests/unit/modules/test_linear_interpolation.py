@@ -3,7 +3,7 @@ import xarray as xr
 import numpy as np
 import pandas as pd
 
-from pywatts.modules import LinearInterpolater
+from pywatts.modules.preprocessing.linear_interpolation import LinearInterpolater
 
 
 class TestLinearInterpolater(unittest.TestCase):

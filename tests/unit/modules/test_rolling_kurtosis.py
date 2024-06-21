@@ -3,8 +3,8 @@ import unittest
 import pandas as pd
 import xarray as xr
 
-from pywatts.modules import RollingGroupBy
-from pywatts.modules import RollingKurtosis
+from pywatts.modules.feature_extraction.rolling_base import RollingGroupBy
+from pywatts.modules.feature_extraction.rolling_kurtosis import RollingKurtosis
 
 
 class TestRollingKurtosis(unittest.TestCase):

@@ -3,8 +3,8 @@ import unittest
 import pandas as pd
 import xarray as xr
 
-from pywatts.modules import CustomScaler
 from pywatts.core.exceptions import WrongParameterException
+from pywatts.modules.preprocessing.custom_scaler import CustomScaler
 
 
 class TestCustomScaler(unittest.TestCase):

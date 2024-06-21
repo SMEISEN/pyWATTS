@@ -7,8 +7,9 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 
 from pywatts.core.pipeline import Pipeline
-from pywatts.modules import LinearInterpolater, SKLearnWrapper
-from pywatts.summaries import RMSE
+from pywatts.modules.preprocessing.linear_interpolation import LinearInterpolater
+from pywatts.modules.wrappers.sklearn_wrapper import SKLearnWrapper
+from pywatts.summaries.rmse_summary import RMSE
 
 FIXTURE_DIR = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
